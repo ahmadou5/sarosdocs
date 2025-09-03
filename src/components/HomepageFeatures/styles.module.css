@@ -1,0 +1,28 @@
+.features {
+  display: flex;
+  align-items: center;
+  padding: 2rem 0;
+  width: 100%;
+}
+
+.featuresSub {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  font-size:4vh;
+  font-weight: 300;
+}
+
+.cardContainer {
+  padding: 6vh;
+  gap: 2vh;
+  margin-top: 3vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.featureSvg {
+  height: 180px;
+  width: 600px;
+}
