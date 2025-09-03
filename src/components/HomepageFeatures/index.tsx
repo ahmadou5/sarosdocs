@@ -22,7 +22,7 @@ const CTAList: CTA[] = [
     title: "Docs",
     description: "Build Solana Dapps with our SDK and Dev Tools",
     icon: Code,
-    to: "/docs/overview",
+    to: "/",
   },
   {
     title: "Blog",
