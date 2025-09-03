@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 import clsx from "clsx";
 import Heading from "@theme/Heading";
 import styles from "./styles.module.css";
-import { Code, Megaphone, Rocket } from "lucide-react";
+import { Code, Megaphone, Rocket, Bug } from "lucide-react";
 import HeroCTACard from "../Cards";
 
 type FeatureItem = {
@@ -22,13 +22,13 @@ const CTAList: CTA[] = [
     title: "Docs",
     description: "Build Solana Dapps with our SDK and Dev Tools",
     icon: Code,
-    to: "/",
+    to: "/docs/Overview",
   },
   {
-    title: "Blog",
-    description: "Read the latest Developer articles and updates from Saros",
-    icon: Megaphone,
-    to: "/blog",
+    title: "Bug Hunt",
+    description: "Help Saros ship bulletproof SDKs for our upcoming hackathon",
+    icon: Bug,
+    to: "https://earn.superteam.fun/listing/saros-sdk-bug-hunt",
   },
   {
     title: "Dev Station",
