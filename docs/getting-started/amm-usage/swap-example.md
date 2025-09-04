@@ -110,6 +110,8 @@ We will have a **Swap** helper function that will Trigger the `swapSaros` when c
 - fromTokenMint: mint address of the input token (string)
 - toTokenMint: mint address of the receiveing token (string)
 
+## Usage
+
 ```js
 const Swap = async () => {
   try {
@@ -157,5 +159,10 @@ const Swap = async () => {
   }
 };
 ```
+
+This example demonstrates how to:
+
+1. Fetch/estimate the minimum receiving amount of the swap
+2. Carry out a successfull Swap transaction
 
 Congratulations Dev We Successfully Lazy Coded a `Swap functionality on your Dapp` using **Saros AMM SDK**:

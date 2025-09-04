@@ -131,6 +131,8 @@ const poolParams = {
 
 Now that we are more than ready, lets start implementing our handleCreatePool function.
 
+## Usage
+
 ```ts
 const handleCreatePool = async () => {
   try {
