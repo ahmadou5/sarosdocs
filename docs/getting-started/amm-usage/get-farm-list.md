@@ -2,7 +2,7 @@
 sidebar_position: 6
 ---
 
-# Get Farm List - Example
+# Get Farm List
 
 ## Farm List
 

@@ -2,7 +2,7 @@
 sidebar_position: 7
 ---
 
-# Get Stake List - Example
+# Get Stake List
 
 ## Stake List
 

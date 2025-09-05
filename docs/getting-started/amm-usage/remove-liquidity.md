@@ -2,7 +2,7 @@
 sidebar_position: 5
 ---
 
-# Remove Liquidity - Example
+# Remove Liquidity
 
 ## Remove Liquidity
 

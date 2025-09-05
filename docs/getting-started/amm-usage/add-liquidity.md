@@ -2,7 +2,7 @@
 sidebar_position: 4
 ---
 
-# Add Liquidity - Example
+# Add Liquidity
 
 ## Add Liquidity
 

@@ -2,7 +2,7 @@
 sidebar_position: 10
 ---
 
-# Claim Stake Rewards - Example
+# Claim Stake Rewards
 
 ## Claim Reward
 

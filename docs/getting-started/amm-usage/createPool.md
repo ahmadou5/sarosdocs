@@ -2,7 +2,7 @@
 sidebar_position: 3
 ---
 
-# Create POOL - Example
+# Create Pool
 
 ## Create a Pool
 
