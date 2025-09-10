@@ -41,11 +41,11 @@ const CTAList: CTA[] = [
 function Feature({ Svg, description }: FeatureItem) {
   return (
     <div className={clsx("flex ")}>
-      <div className="text--center w-[400px]">
+      <div className="text--center w-[80%]">
         <Svg
           className={styles.featureSvg}
           role="img"
-          width={600}
+          width={"90%"}
           height={120}
         />
       </div>

@@ -86,21 +86,15 @@ const config: Config = {
           position: "left",
           label: "Documentation",
         },
-        {
-          type: "docSidebar",
-          sidebarId: "tutorialSidebar",
-          position: "left",
-          label: "Tutorial",
-        },
 
         {
-          href: "https://github.com/facebook/docusaurus",
+          href: "https://github.com/ahmadou5/sarosdocs",
           label: "GitHub",
           position: "right",
         },
         {
-          href: "https://github.com/facebook/docusaurus",
-          label: "Discord",
+          href: "https://t.me/+DLLPYFzvTzJmNTJh",
+          label: "Telegram",
           position: "right",
         },
         {
@@ -115,7 +109,7 @@ const config: Config = {
           title: "Docs",
           items: [
             {
-              label: "Tutorial",
+              label: "Documentation",
               to: "/docs/Overview",
             },
           ],
@@ -124,12 +118,12 @@ const config: Config = {
           title: "Community",
           items: [
             {
-              label: "Discord",
-              href: "https://discordapp.com/invite/docusaurus",
+              label: "Telegram",
+              href: "https://t.me/+DLLPYFzvTzJmNTJh",
             },
             {
               label: "X",
-              href: "https://x.com/docusaurus",
+              href: "https://x.com/saros_xyz",
             },
           ],
         },
@@ -142,16 +136,15 @@ const config: Config = {
             },
             {
               label: "GitHub",
-              href: "https://github.com/facebook/docusaurus",
+              href: "https://github.com/ahmadou5/sarosdocs",
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Saros, Inc.`,
     },
     prism: {
-      theme: prismThemes.vsDark,
-      darkTheme: prismThemes.nightOwlLight,
+      theme: prismThemes.duotoneDark,
+      darkTheme: prismThemes.duotoneDark,
     },
   } satisfies Preset.ThemeConfig,
 };

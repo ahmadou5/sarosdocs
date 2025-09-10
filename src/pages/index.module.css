@@ -24,6 +24,63 @@
 
 .bodyhelper {
   height: fit-content;
-  padding: 15vh;
+  padding: 6vh;
   margin-top: 10vh;
+}
+
+
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Logo */
+
+.logoContainer {
+  position: relative;
+  max-width: 100%;
+  height: auto;
+}
+
+.logoContainer img {
+  width: 100%;
+  height: auto;
+  max-width: 1000px; /* or whatever the original width is */
+}
+
+/* Hero CTA Card Container */
+.cardContainer {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.tagline {
+  font-size: 3rem;
+  text-align: center;
+  margin: 0 0 3rem 0;  /* Top Right Bottom Left */
+  line-height: 1.2;
+  letter-spacing: -0.02em;  /* Slight negative tracking */
+  max-width: 800px;  /* Prevent line from getting too long */
+}
+
+.no-padding {
+  padding: 0 !important;
+}
+
+@media (max-width: 768px) {
+  .cardContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .tagline {
+    font-size: 1.5rem;
+    margin: 1.5rem 0 2rem 0;
+    padding: 0 1rem;
+  }
 }

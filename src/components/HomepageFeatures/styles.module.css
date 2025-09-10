@@ -13,9 +13,9 @@
 }
 
 .cardContainer {
-  padding: 6vh;
+
   gap: 2vh;
-  margin-top: 3vh;
+  margin-top: 1vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -24,5 +24,5 @@
 
 .featureSvg {
   height: 180px;
-  width: 600px;
+  width: 90%;
 }
