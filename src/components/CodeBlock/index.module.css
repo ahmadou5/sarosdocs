@@ -1,0 +1,461 @@
+/* CodeBlock.module.css */
+
+.codeBlockContainer {
+  background: #1e1e1e;
+  border: 1px solid #3c3c3c;
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 1rem 0;
+  font-family: 'Cascadia Code', 'Fira Code', 'SF Mono', Monaco, 'Roboto Mono', Consolas, 'Courier New', monospace;
+}
+
+.codeHeader {
+  background: #2d2d2d;
+  border-bottom: 1px solid #3c3c3c;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 40px;
+}
+
+.fileInfo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #cccccc;
+}
+
+.fileIcon {
+  color: #858585;
+  flex-shrink: 0;
+}
+
+.filename {
+  font-size: 13px;
+  color: #cccccc;
+  font-weight: 400;
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.language {
+  font-size: 12px;
+  color: #858585;
+  padding: 2px 6px;
+  background: #3c3c3c;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.language:hover {
+  background: #484848;
+}
+
+.languageIcon {
+  color: #858585;
+  width: 12px;
+  height: 12px;
+}
+
+.copyButton {
+  background: transparent;
+  border: none;
+  color: #858585;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.copyButton:hover {
+  background: #3c3c3c;
+  color: #cccccc;
+}
+
+.codeContent {
+  background: #1e1e1e;
+  overflow-x: auto;
+}
+
+.codeBlock {
+  margin: 0;
+  padding: 16px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #d4d4d4;
+  background: transparent;
+  font-family: inherit;
+  white-space: pre;
+  overflow-x: auto;
+}
+
+.codeBlock code {
+  background: transparent !important;
+  padding: 0 !important;
+  border: none !important;
+  font-family: inherit;
+}
+
+/* Dark Theme Syntax highlighting */
+.codeBlock :global(.keyword) {
+  color: #569cd6;
+  font-weight: normal;
+}
+
+.codeBlock :global(.react-type) {
+  color: #4ec9b0;
+  font-weight: normal;
+}
+
+.codeBlock :global(.string) {
+  color: #ce9178;
+}
+
+.codeBlock :global(.comment) {
+  color: #6a9955;
+  font-style: italic;
+}
+
+.codeBlock :global(.number) {
+  color: #b5cea8;
+}
+
+.codeBlock :global(.jsx-tag) {
+  color: #92c5f8;
+}
+
+.codeBlock :global(.jsx-expression) {
+  color: #ffd700;
+}
+
+.codeBlock :global(.function) {
+  color: #dcdcaa;
+  font-weight: normal;
+}
+
+.codeBlock :global(.property) {
+  color: #9cdcfe;
+}
+
+.codeBlock :global(.boolean) {
+  color: #569cd6;
+}
+
+/* Scrollbar styling */
+.codeContent::-webkit-scrollbar {
+  height: 12px;
+}
+
+.codeContent::-webkit-scrollbar-track {
+  background: #1e1e1e;
+}
+
+.codeContent::-webkit-scrollbar-thumb {
+  background: #424242;
+  border-radius: 6px;
+}
+
+.codeContent::-webkit-scrollbar-thumb:hover {
+  background: #4f4f4f;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .codeHeader {
+    padding: 6px 12px;
+  }
+  
+  .filename {
+    font-size: 12px;
+  }
+  
+  .language {
+    font-size: 11px;
+  }
+  
+  .codeBlock {
+    padding: 12px;
+    font-size: 12px;
+  }
+}
+
+/* Light theme support */
+[data-theme='light'] .codeBlockContainer {
+  background: #ffffff;
+  border-color: #e1e1e1;
+}
+
+[data-theme='light'] .codeHeader {
+  background: #f3f3f3;
+  border-bottom-color: #e1e1e1;
+}
+
+[data-theme='light'] .fileInfo,
+[data-theme='light'] .filename {
+  color: #383838;
+}
+
+[data-theme='light'] .fileIcon {
+  color: #616161;
+}
+
+[data-theme='light'] .language {
+  background: #e1e1e1;
+  color: #616161;
+}
+
+[data-theme='light'] .language:hover {
+  background: #d4d4d4;
+}
+
+[data-theme='light'] .copyButton {
+  color: #616161;
+}
+
+[data-theme='light'] .copyButton:hover {
+  background: #e1e1e1;
+  color: #383838;
+}
+
+[data-theme='light'] .codeContent,
+[data-theme='light'] .codeBlock {
+  background: #ffffff;
+  color: #383838;
+}
+
+/* Light Theme Syntax highlighting - Enhanced */
+[data-theme='light'] .codeBlock :global(.keyword) {
+  color: #0066cc;
+}
+
+[data-theme='light'] .codeBlock :global(.react-type) {
+  color: #008080;
+}
+
+[data-theme='light'] .codeBlock :global(.string) {
+  color: #a31515;
+}
+
+[data-theme='light'] .codeBlock :global(.comment) {
+  color: #008000;
+}
+
+[data-theme='light'] .codeBlock :global(.number) {
+  color: #098658;
+}
+
+[data-theme='light'] .codeBlock :global(.jsx-tag) {
+  color: #800000;
+}
+
+[data-theme='light'] .codeBlock :global(.jsx-attr) {
+  color: #e50000;
+}
+
+[data-theme='light'] .codeBlock :global(.jsx-expression) {
+  color: #0066cc;
+}
+
+[data-theme='light'] .codeBlock :global(.function) {
+  color: #795e26;
+}
+
+[data-theme='light'] .codeBlock :global(.property) {
+  color: #001080;
+}
+
+[data-theme='light'] .codeBlock :global(.boolean) {
+  color: #0066cc;
+}
+
+/* Add these rules to your existing CodeBlock.module.css */
+
+/* Line numbers and wrapper styles */
+.codeWrapper {
+  display: flex;
+  background: #1e1e1e;
+}
+
+.lineNumbers {
+  background: #252526;
+  color: #858585;
+  padding: 16px 8px 16px 16px;
+  font-size: 13px;
+  line-height: 1.5;
+  text-align: right;
+  user-select: none;
+  border-right: 1px solid #3c3c3c;
+  min-width: 45px;
+}
+
+.lineNumber {
+  display: block;
+  padding: 0 4px;
+  font-family: inherit;
+}
+
+/* Update codeBlock to work with wrapper */
+.codeWrapper .codeBlock {
+  flex: 1;
+  margin: 0;
+}
+
+/* Enhanced syntax highlighting classes */
+.codeBlock :global(.property) {
+  color: #9cdcfe;
+}
+
+.codeBlock :global(.boolean) {
+  color: #569cd6;
+}
+
+.codeBlock :global(.jsx-attr) {
+  color: #92c5f8;
+}
+
+.codeBlock :global(.operator) {
+  color: #d4d4d4;
+}
+
+.codeBlock :global(.punctuation) {
+  color: #d4d4d4;
+}
+
+/* Scrollable code blocks */
+.codeBlockContainer[style*="maxHeight"] .codeContent {
+  overflow-y: auto;
+}
+
+.codeBlockContainer[style*="maxHeight"] .codeContent::-webkit-scrollbar {
+  width: 12px;
+}
+
+.codeBlockContainer[style*="maxHeight"] .codeContent::-webkit-scrollbar-track {
+  background: #1e1e1e;
+}
+
+.codeBlockContainer[style*="maxHeight"] .codeContent::-webkit-scrollbar-thumb {
+  background: #424242;
+  border-radius: 6px;
+}
+
+/* Light theme additions */
+[data-theme='light'] .codeWrapper {
+  background: #ffffff;
+}
+
+[data-theme='light'] .lineNumbers {
+  background: #f8f8f8;
+  color: #616161;
+  border-right-color: #e1e1e1;
+}
+
+[data-theme='light'] .codeBlock :global(.property) {
+  color: #001080;
+}
+
+[data-theme='light'] .codeBlock :global(.operator),
+[data-theme='light'] .codeBlock :global(.punctuation) {
+  color: #383838;
+}
+
+/* Copy button animation improvements */
+.copyButton {
+  position: relative;
+  overflow: hidden;
+}
+
+.copyButton::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s ease;
+}
+
+.copyButton:active::after {
+  width: 100px;
+  height: 100px;
+}
+
+/* Focus states for accessibility */
+.copyButton:focus {
+  outline: 2px solid #007acc;
+  outline-offset: 2px;
+}
+
+.language:focus {
+  outline: 2px solid #007acc;
+  outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .codeBlockContainer {
+    border-width: 2px;
+  }
+  
+  .codeBlock :global(.comment) {
+    color: #7c7c7c;
+    font-weight: bold;
+  }
+  
+  .codeBlock :global(.keyword) {
+    font-weight: bold;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .copyButton,
+  .language {
+    transition: none;
+  }
+  
+  .copyButton::after {
+    transition: none;
+  }
+}
+
+/* Print styles */
+@media print {
+  .codeBlockContainer {
+    background: white !important;
+    border: 1px solid #000;
+  }
+  
+  .codeHeader {
+    background: #f0f0f0 !important;
+    color: #000 !important;
+  }
+  
+  .copyButton {
+    display: none;
+  }
+  
+  .codeBlock {
+    color: #000 !important;
+    background: white !important;
+  }
+  
+  .codeBlock :global(*) {
+    color: #000 !important;
+  }
+}

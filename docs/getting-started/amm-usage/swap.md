@@ -2,97 +2,108 @@
 sidebar_position: 2
 ---
 
-# Swap
+import CodeBlock from '@site/src/components/CodeBlock'
 
-## Swap
+# ♻️ Swap
+
+## Swap ♻️
 
 To start with the `Swap` implementation we need to get all the **Swap** related functions and all the necessary Helper functions from the `@saros-finance/sdk`:
 
-```js
-import {
-  getSwapAmountSaros,
-  swapSaros,
-  genConnectionSolana,
+<CodeBlock
+filename="Swap.tsx"
+language="TypeScript"
+showCopy={true}
+showLineNumbers={true} code={`import {
+getSwapAmountSaros,
+swapSaros,
+genConnectionSolana,
 } from "@saros-finance/sdk";
 
-import { PublicKey, clusterApiUrl, Connection } from "@solana/web3.js";
-```
+import { PublicKey, clusterApiUrl, Connection } from "@solana/web3.js";`} />
 
 ## Connection
 
 Then we need a Connection to the Solana Cluster(network). we can use the saros-finanace `genConnectionSolana` helper function or use the solana `Connection` Class
 
-```js
-//using @saros-finance genConnectionSolana function
+<CodeBlock
+filename="Swap.tsx"
+language="TypeScript"
+showCopy={true}
+showLineNumbers={true} code={`//using @saros-finance genConnectionSolana function
 const connection = genConnectionSolana();
 
 //using @solana/web3.js Connection
-const connection = new Connection(clusterApiUrl.mainnet, "confirmed");
-```
+const connection = new Connection(clusterApiUrl.mainnet, "confirmed");`} />
 
 ## Swap Configs
 
 So now that we are almost ready lets configure some of the configurations we are going to use for the Swap Operations
 
-```js
-//Token Program ID
+<CodeBlock
+filename="Swap.tsx"
+language="TypeScript"
+showCopy={true}
+showLineNumbers={true} code={`//Token Program ID
 const TOKEN_PROGRAM_ID = new PublicKey(
-  "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+"TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
 );
 
 //SAROS SWAP PROGRAM
 const SAROS_SWAP_PROGRAM_ADDRESS_V1 = new PublicKey(
-  "SSwapUtytfBdBn1b9NUGG6foMVPtcWgpRU32HToDUZr"
+"SSwapUtytfBdBn1b9NUGG6foMVPtcWgpRU32HToDUZr"
 );
 
 const userAccount = "5UrM9csUEDBeBqMZTuuZyHRNhbRW4vQ1MgKJDrKU1U2v"; // owner address
 
-const SLIPPAGE = 0.5;
-```
+const SLIPPAGE = 0.5;`} />
 
 ## Swap POOLS
 
 SPL Tokens to perform the Swap against and Pool Params in this example we will use the tokens C98 and USDC
 
-```js
+<CodeBlock
+filename="Swap.tsx"
+language="TypeScript"
+showCopy={true}
+showLineNumbers={true} code={`
 // Pool example on saros C98 to USDC
 const USDC_TOKEN = {
-  id: "usd-coin",
-  mintAddress: "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
-  symbol: "usdc",
-  name: "USD Coin",
-  icon: "https://raw.githubusercontent.com/solana-labs/token-list/main/assets/mainnet/EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v/logo.png",
-  decimals: "6",
-  addressSPL: "FXRiEosEvHnpc3XZY1NS7an2PB1SunnYW1f5zppYhXb3",
+id: "usd-coin",
+mintAddress: "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+symbol: "usdc",
+name: "USD Coin",
+icon: "https://raw.githubusercontent.com/solana-labs/token-list/main/assets/mainnet/EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v/logo.png",
+decimals: "6",
+addressSPL: "FXRiEosEvHnpc3XZY1NS7an2PB1SunnYW1f5zppYhXb3",
 };
 
 const C98_TOKEN = {
-  id: "coin98",
-  mintAddress: "C98A4nkJXhpVZNAZdHUA95RpTF3T4whtQubL3YobiUX9",
-  symbol: "C98",
-  name: "Coin98",
-  icon: "https://coin98.s3.ap-southeast-1.amazonaws.com/Coin/c98-512.svg",
-  decimals: "6",
-  addressSPL: "EKCdCBjfQ6t5FBfDC2zvmr27PgfVVZU37C8LUE4UenKb",
+id: "coin98",
+mintAddress: "C98A4nkJXhpVZNAZdHUA95RpTF3T4whtQubL3YobiUX9",
+symbol: "C98",
+name: "Coin98",
+icon: "https://coin98.s3.ap-southeast-1.amazonaws.com/Coin/c98-512.svg",
+decimals: "6",
+addressSPL: "EKCdCBjfQ6t5FBfDC2zvmr27PgfVVZU37C8LUE4UenKb",
 };
 
 //PoolParams
 const poolParams = {
-  address: "2wUvdZA8ZsY714Y5wUL9fkFmupJGGwzui2N74zqJWgty",
-  tokens: {
-    C98A4nkJXhpVZNAZdHUA95RpTF3T4whtQubL3YobiUX9: {
-      ...C98_TOKEN,
-    },
-    EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v: {
-      ...USDC_TOKEN,
-    },
-  },
-  tokenIds: [
-    "C98A4nkJXhpVZNAZdHUA95RpTF3T4whtQubL3YobiUX9",
-    "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
-  ],
-};
-```
+address: "2wUvdZA8ZsY714Y5wUL9fkFmupJGGwzui2N74zqJWgty",
+tokens: {
+C98A4nkJXhpVZNAZdHUA95RpTF3T4whtQubL3YobiUX9: {
+...C98_TOKEN,
+},
+EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v: {
+...USDC_TOKEN,
+},
+},
+tokenIds: [
+"C98A4nkJXhpVZNAZdHUA95RpTF3T4whtQubL3YobiUX9",
+"EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+],
+};`} />
 
 ## Swap Parameters
 
@@ -112,13 +123,16 @@ We will have a **Swap** helper function that will Trigger the `swapSaros` when c
 
 ## Usage
 
-```js
-const Swap = async () => {
-  try {
-    const fromTokenAccount = C98_TOKEN.addressSPL;
-    const toTokenAccount = USDC_TOKEN.addressSPL;
-    const fromTokenMint = C98_TOKEN.mintAddress;
-    const toTokenMint = USDC_TOKEN.mintAddress;
+<CodeBlock
+filename="Swap.tsx"
+language="TypeScript"
+showCopy={true}
+showLineNumbers={true} code={`const Swap = async () => {
+try {
+const fromTokenAccount = C98_TOKEN.addressSPL;
+const toTokenAccount = USDC_TOKEN.addressSPL;
+const fromTokenMint = C98_TOKEN.mintAddress;
+const toTokenMint = USDC_TOKEN.mintAddress;
 
     const amount = parseFloat(10);
 
@@ -148,17 +162,18 @@ const Swap = async () => {
       toTokenMint
     );
 
-    const { isError } = swapResponse;
-    if (isError) {
-      throw new Error();
-    }
+    const { isError, hash} = swapResponse;
 
-    return `Transaction Hash: ${swapResponse.hash}`;
-  } catch (error) {
-    if(error instanceOf Error) console.error(error.message)
-  }
-};
-```
+if (isError) {
+throw new Error();
+} else {
+return hash;
+}
+
+} catch(error) {
+if(error instanceOf Error) console.error(error.message)
+}
+}`} />
 
 This example demonstrates how to:
 

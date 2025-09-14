@@ -1,0 +1,191 @@
+/* Terminal-style code blocks */
+.terminalBlock {
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 0;
+  margin-bottom: 1.5rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.terminalHeader {
+  background: #2d2d2d;
+  padding: 8px 16px;
+  border-bottom: 1px solid #333;
+  display: flex;
+  align-items: center;
+  font-size: 0.85rem;
+  color: #888;
+}
+
+.terminalHeader::before {
+  content: "⚡";
+  margin-right: 8px;
+  color: #fff;
+}
+
+.terminalContent {
+  padding: 16px;
+  font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.terminalContent pre {
+  background: transparent !important;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.terminalContent code {
+  background: transparent !important;
+  color: #e1e1e1;
+  padding: 0;
+}
+
+.terminalPrompt {
+  color: #7c3aed;
+  user-select: none;
+}
+
+.terminalCommand {
+  color: #10b981;
+}
+
+.terminalOutput {
+  color: #9ca3af;
+  margin-top: 8px;
+}
+
+/* Package manager tabs */
+.packageManagerTabs {
+  display: flex;
+  background: #1f2937;
+  border-radius: 8px 8px 0 0;
+  margin: 1.5rem 0 0 0;
+}
+
+.packageTab {
+  padding: 8px 16px;
+  background: #374151;
+  border: none;
+  color: #9ca3af;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: 8px 8px 0 0;
+  margin-right: 2px;
+  transition: all 0.2s ease;
+}
+
+.packageTab.active {
+  background: #1a1a1a;
+  color: #fff;
+}
+
+.packageTab:hover:not(.active) {
+  background: #4b5563;
+  color: #fff;
+}
+
+/* Copy button styling */
+.copyButton {
+  position: absolute;
+  top: 6px;
+  right: 12px;
+ background: transparent;
+  border: none;
+  color: #858585;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  opacity: 0;
+}
+
+.copyButton {
+  background: transparent;
+  border: none;
+  color: #858585;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.copyButton:hover {
+  background: #3c3c3c;
+  color: #cccccc;
+}
+
+
+.terminalBlock:hover .copyButton {
+  opacity: 1;
+}
+
+.copyButton:hover {
+  background: #3332;
+  color: #fff;
+}
+
+/* Installation steps */
+.installation-step {
+  margin: 2rem 0;
+}
+
+.step-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--ifm-font-color-base);
+  margin-bottom: 0.5rem;
+}
+
+.step-description {
+  color: var(--ifm-font-color-secondary);
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .terminalContent {
+    font-size: 12px;
+    padding: 12px;
+  }
+  
+  .packageManagerTabs {
+    overflow-x: auto;
+  }
+  
+  .packageTab {
+    flex-shrink: 0;
+  }
+}
+
+/* In your terminal.css */
+[data-theme='light'] .terminalBlock {
+  background: #f8f9fa;
+  border-color: #e1e5e9;
+}
+
+
+[data-theme='light'] .copyButton {
+  background: #e1e5e9;
+  border-color: #d1d7db;
+  color: #070707;
+}
+[data-theme='light'] .terminalHeader {
+  background: #e1e5e9;
+  border-color: #d1d7db;
+}
+
+[data-theme='light'] .terminalContent code {
+  color: #1a1a1a;
+}

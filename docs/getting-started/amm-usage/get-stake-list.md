@@ -2,29 +2,39 @@
 sidebar_position: 7
 ---
 
-# Get Stake List
+import CodeBlock from '@site/src/components/CodeBlock'
+import PackageManagerTabs from '@site/src/components/PackageManager'
+
+# 📜 Get Stake List
 
 ## Stake List
 
 To fetch the **Stake** list all we need from the `@saros-finance/sdk` is :
 
-```js
-import sarosSdk from "@saros-finance/sdk";
-```
+<CodeBlock
+filename="StakeList.tsx"
+language="TypeScript"
+showCopy={true}
+showLineNumbers={true} code={`import sarosSdk from "@saros-finance/sdk";`} />
 
 ## SarosStakeService
 
 We need to utilize the SarosStakeService that we got from the sarosSdk member we just imported
 
-```js
-//using @saros-finance Saros Stake Services
-const { SarosStakeService } = sarosSdk;
-```
+<CodeBlock
+filename="StakeList.tsx"
+language="TypeScript"
+showCopy={true}
+showLineNumbers={true} code={`//using @saros-finance Saros Stake Services
+const { SarosStakeService } = sarosSdk;`} />
 
 ## Usage
 
-```js
-//Query all Staking on Saros
+<CodeBlock
+filename="StakeList.tsx"
+language="TypeScript"
+showCopy={true}
+showLineNumbers={true} code={`//Query all Staking on Saros
 const handleFetchStakeList = async () => {
   try {
     const stakeResponse = await SarosStakeService.getListPool({
@@ -36,5 +46,4 @@ const handleFetchStakeList = async () => {
     if(error instanceOf Error) console.error(error)
     return []
   }
-};
-```
+};`} />

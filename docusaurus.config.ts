@@ -1,5 +1,5 @@
 import { themes as prismThemes } from "prism-react-renderer";
-
+import { useColorMode } from "@docusaurus/theme-common";
 import type { Config } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
 
@@ -16,7 +16,7 @@ const config: Config = {
   },
 
   // Set the production url of your site here
-  url: "https://your-docusaurus-site.example.com",
+  url: "https:sarosdocs.vercel.app",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: "/",
@@ -45,8 +45,7 @@ const config: Config = {
           sidebarPath: "./sidebars.ts",
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
+          editUrl: "https://github.com/ahmadou5/sarosdocs/issues",
         },
         blog: {
           showReadingTime: true,
@@ -56,8 +55,7 @@ const config: Config = {
           },
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
+          editUrl: "https://github.com/ahmadou5/sarosdocs/issues",
           // Useful options to enforce blogging best practices
           onInlineTags: "warn",
           onInlineAuthors: "warn",

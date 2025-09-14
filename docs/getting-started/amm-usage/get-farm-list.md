@@ -2,29 +2,39 @@
 sidebar_position: 6
 ---
 
-# Get Farm List
+import CodeBlock from '@site/src/components/CodeBlock'
+import PackageManagerTabs from '@site/src/components/PackageManager'
+
+# 📜 Get Farm List
 
 ## Farm List
 
 To fetch the **Farm** list all we need from the `@saros-finance/sdk` is :
 
-```js
-import sarosSdk from "@saros-finance/sdk";
-```
+<CodeBlock
+filename="FarmList.tsx"
+language="TypeScript"
+showCopy={true}
+showLineNumbers={true} code={`import sarosSdk from "@saros-finance/sdk";`} />
 
 ## SarosFarmService
 
 We need to utilize the SarosFarmService that we got from the sarosSdk member we just imported
 
-```js
-//using @saros-finance SarosFarm Services then we
-const { SarosFarmService } = sarosSdk;
-```
+<CodeBlock
+filename="FarmList.tsx"
+language="TypeScript"
+showCopy={true}
+showLineNumbers={true} code={`//using @saros-finance SarosFarm Services then we
+const { SarosFarmService } = sarosSdk;`} />
 
 ## Usage
 
-```js
-//Query all farms on Saros
+<CodeBlock
+filename="FarmList.tsx"
+language="TypeScript"
+showCopy={true}
+showLineNumbers={true} code={`//Query all farms on Saros
 const handleFetchFarmList = async () => {
   try {
     const farmResponse = await SarosFarmService.getListPool({
@@ -36,5 +46,4 @@ const handleFetchFarmList = async () => {
     if(error instanceOf Error) console.error(error)
     return []
   }
-};
-```
+};`} />

@@ -2,11 +2,17 @@
 sidebar_position: 1
 ---
 
+import Terminal from '@site/src/components/Terminal'
+import PackageManagerTabs from '@site/src/components/PackageManager'
+import CodeBlock from '@site/src/components/CodeBlock'
+
 # Installation
 
-Create a Dapp that is Powered by `Saros` Liquidity engine.
+Install `Saros SDK` into your **solana** Dapp.
 
 ## Quick Start
+
+- Navigate to your Project root directory `cd my-dapp`
 
 ## System requirements
 
@@ -20,30 +26,21 @@ Before you begin, make sure you have the following requirements in place:
 
 ## For AMM SDK (Saros Swap).
 
-Run the command `yarn add @saros-finance/sdk` if you are using `Yarn`
-
-```ts title="terminal"
-yarn add @saros-finance/sdk
-```
-
-Run the command `npm install @saros-finance/sdk` if you are using `NPM`
-
-```ts title="terminal"
-npm install @saros-finance/sdk
-```
+Choose from your prefered Package Manager `npm`, `yarn`, `pnpm` or `bun`
+<PackageManagerTabs title="Terminal" packageName='@saros-finance/sdk' />
 
 ## For Dynamic Liquidity Market Maker (Saros DLMM).
 
-Run the command `yarn add @saros-finance/dlmm-sdk` if you are using `Yarn`
+Choose from your prefered Package Manager `npm`, `yarn`, `pnpm` or `bun`
 
-```ts title="terminal"
-yarn add @saros-finance/dlmm-sdk
-```
+<PackageManagerTabs title="Terminal" packageName='@saros-finance/dlmm-sdk' />
 
-Run the command `npm install @saros-finance/dlmm-sdk` if you are using `NPM`
+## Run development server.
 
-```ts title="terminal"
-npm install @saros-finance/dlmm-sdk
-```
+After Successfully installing `Saros SDK` now we are ready to run our project on Development enviroment.
+
+<PackageManagerTabs title="Terminal" packageName='@saros-finance/dlmm-sdk' isDevServer={true} />
+
+Congratulations you just installed `Saros SDK` in your Project 🥳🥳🎯🎯
 
 ![Docusaurus logo](/img/saros.svg)

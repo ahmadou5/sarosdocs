@@ -3,6 +3,6 @@
   "position": 2,
   "link": {
     "type": "generated-index",
-    "description": "A short and precise examples on how to integrate Saros Swap on Your Dapp."
+    "description": "A short and precise step by step guide on how to integrate Saros SDK(AMM) on your Solana Dapp."
   }
 }

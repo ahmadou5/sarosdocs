@@ -1,0 +1,232 @@
+/* Installation wrapper */
+.installationWrapper {
+  margin: 1.5rem 0;
+  background: transparent;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 0;
+  margin-bottom: 1.5rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.description {
+  color: #2483ff;
+  font-size: 14px;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+/* Package manager tabs - NO spacing, seamless connection */
+.packageManagerTabs {
+  display: flex;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  border: none;
+  border-radius: 6px 6px 6px 6px;
+  z-index: 2;
+}
+
+.packageTab {
+  padding: 8px 12px;
+  background: #181818;
+  border: none;
+  color: #9ca3af;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500;
+  font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+  border-radius: 6px 6px 6px 6px;
+  margin: 0;
+  margin-right: 1px;
+  transition: all 0.15s ease;
+  position: relative;
+  border-bottom: none;
+}
+
+.packageTab:last-child {
+  margin-right: 0;
+}
+
+.packageTab:hover:not(.active) {
+  background: #23272c;
+  color: #e5e7eb;
+}
+
+.packageTab.active {
+  background: #1a1a1a;
+  color: #ffffff;
+}
+
+/* Override any Terminal component margins/padding that create spacing */
+.installationWrapper :global(.terminalBlock),
+.installationWrapper :global(.terminal),
+.installationWrapper :global([class*="terminal"]) {
+  margin-top: 0 !important;
+  border-top-left-radius: 0 !important;
+  border-top-right-radius: 0 !important;
+}
+
+/* If the Terminal component has a wrapper div */
+.packageManagerTabs + * {
+  margin-top: 0 !important;
+}
+
+.packageManagerTabs + * > * {
+  margin-top: 0 !important;
+  border-top-left-radius: 0 !important;
+}
+
+/* Ensure the terminal connects seamlessly */
+.packageManagerTabs + div,
+.packageManagerTabs + div > div {
+  border-top-left-radius: 0 !important;
+  border-top: none !important;
+}
+
+/* Terminal-style code blocks - Updated to connect with tabs */
+.terminalBlock {
+  background: #c2c2c2;
+  border: 1px solid #333;
+  border-radius: 0 8px 8px 8px; /* No top-left radius */
+  padding: 0;
+  margin: 0; /* Remove any margin */
+  position: relative;
+  overflow: hidden;
+}
+
+.terminalHeader {
+  background: #2d2d2d;
+  padding: 8px 16px;
+  border-bottom: 1px solid #333;
+  display: flex;
+  align-items: center;
+  font-size: 0.85rem;
+  color: #888;
+  margin: 0;
+}
+
+.terminalHeader::before {
+  content: "⚡";
+  margin-right: 8px;
+  color: #fff;
+}
+
+.terminalContent {
+  padding: 16px;
+  font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.terminalContent pre {
+  background: transparent !important;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.terminalContent code {
+  background: transparent !important;
+  color: #e1e1e1;
+  padding: 0;
+}
+
+.terminalPrompt {
+  color: #7c3aed;
+  user-select: none;
+}
+
+.terminalCommand {
+  color: #10b981;
+}
+
+.terminalOutput {
+  color: #9ca3af;
+  margin-top: 8px;
+}
+
+/* Copy button styling */
+.copyButton {
+  position: absolute;
+  top: 6px;
+  right: 12px;
+  background: #333;
+  border: 1px solid #4b5563;
+  color: #ffffff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  opacity: 0;
+}
+
+.terminalBlock:hover .copyButton {
+  opacity: 1;
+}
+
+.copyButton:hover {
+  background: #4b5563;
+  color: #fff;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .terminalContent {
+    font-size: 12px;
+    padding: 12px;
+  }
+  
+  .packageManagerTabs {
+    overflow-x: auto;
+  }
+  
+  .packageTab {
+    flex-shrink: 0;
+  }
+}
+
+/* Light theme support */
+[data-theme='light'] .terminalBlock {
+background: #e1e5e9;
+  border-color: #d1d7db;
+}
+
+[data-theme='light'] .copyButton {
+  background: #e1e5e9;
+  border-color: #d1d7db;
+  color: #070707;
+}
+
+[data-theme='light'] .terminalHeader {
+  background: #e1e5e9;
+  border-color: #d1d7db;
+}
+
+[data-theme='light'] .terminalContent code {
+  color: #1a1a1a;
+}
+
+[data-theme='light'] .packageTab {
+  background: #fdfdfd;
+  color: #495057;
+}
+
+[data-theme='light'] .installationWrapper {
+   border: 1px solid #d1d7db;
+}
+
+[data-theme='light'] .packageTab:hover:not(.active) {
+    background: #d1d7db;
+  color: #0a0a0a;
+}
+
+
+[data-theme='light'] .packageTab.active {
+  background: #f8f9fa;
+  color: #212529;
+}
