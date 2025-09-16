@@ -4,7 +4,7 @@ sidebar_position: 6
 
 import CodeBlock from '@site/src/components/CodeBlock'
 
-# Get DEX Name
+# 📜 Get DEX Name
 
 ## Dex Name
 

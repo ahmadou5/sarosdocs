@@ -4,7 +4,7 @@ sidebar_position: 2
 
 import CodeBlock from '@site/src/components/CodeBlock'
 
-# Swap
+# ♻️ Swap
 
 ## Swap
 

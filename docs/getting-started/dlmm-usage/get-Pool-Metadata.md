@@ -4,7 +4,7 @@ sidebar_position: 8
 
 import CodeBlock from '@site/src/components/CodeBlock'
 
-# Get Pool Metadata
+# 📜 Get Pool Metadata
 
 ## Pool Metadata
 

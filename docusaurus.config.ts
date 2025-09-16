@@ -45,7 +45,7 @@ const config: Config = {
           sidebarPath: "./sidebars.ts",
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl: "https://github.com/ahmadou5/sarosdocs/issues",
+          editUrl: "https://github.com/ahmadou5/sarosdocs",
         },
         blog: {
           showReadingTime: true,
@@ -55,7 +55,7 @@ const config: Config = {
           },
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl: "https://github.com/ahmadou5/sarosdocs/issues",
+          editUrl: "https://github.com/ahmadou5/sarosdocs",
           // Useful options to enforce blogging best practices
           onInlineTags: "warn",
           onInlineAuthors: "warn",

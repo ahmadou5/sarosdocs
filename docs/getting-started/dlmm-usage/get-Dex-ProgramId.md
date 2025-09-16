@@ -4,7 +4,7 @@ sidebar_position: 7
 
 import CodeBlock from '@site/src/components/CodeBlock'
 
-# Get DEX ProgramId
+# 📜 Get DEX ProgramId
 
 ## Dex ProgramId
 

@@ -4,7 +4,7 @@ sidebar_position: 9
 
 import CodeBlock from '@site/src/components/CodeBlock'
 
-# Get Pool Addresses
+# 📜 Get Pool Addresses
 
 ## Pool Address
 

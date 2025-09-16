@@ -4,7 +4,7 @@ sidebar_position: 3
 
 import CodeBlock from '@site/src/components/CodeBlock'
 
-# Create Pool
+# 💱 Create Pool
 
 ## Create Pool
 
