@@ -85,7 +85,7 @@ const config: Config = {
           label: "Build on Saros",
           items: [
             {
-              to: "docs/overview",
+              to: "docs/Overview",
               label: "Overview",
             },
             {
