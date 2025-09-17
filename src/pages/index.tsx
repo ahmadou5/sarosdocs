@@ -2,11 +2,16 @@ import type { ReactNode } from "react";
 import { useColorMode } from "@docusaurus/theme-common";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
-
 import Search from "@theme/SearchBar";
 import styles from "./index.module.css";
 import Hero from "../components/HeroComponent";
-import { Bug, Code, Rocket } from "lucide-react";
+import {
+  Bug,
+  Code,
+  Rocket,
+  HandshakeIcon,
+  BadgeDollarSign,
+} from "lucide-react";
 import HeroCTACard from "../components/Cards";
 
 type CTA = {
@@ -24,15 +29,21 @@ const CTAList: CTA[] = [
     to: "/docs/Overview",
   },
   {
-    title: "Bug Hunt",
+    title: "Bounties",
     description: "Help Saros ship bulletproof SDKs for our upcoming hackathon",
-    icon: Bug,
-    to: "https://earn.superteam.fun/listing/saros-sdk-bug-hunt",
+    icon: BadgeDollarSign,
+    to: "bounties",
+  },
+  {
+    title: "Hackathon",
+    description: "Announcing the $100K Saros Hackathon.",
+    icon: Rocket,
+    to: "hackathon",
   },
   {
     title: "Dev Station",
     description: "Join the Saros Developers community on Telegram.",
-    icon: Rocket,
+    icon: HandshakeIcon,
     to: "https://t.me/+DLLPYFzvTzJmNTJh",
   },
 ];
