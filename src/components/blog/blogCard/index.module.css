@@ -1,0 +1,560 @@
+/* CSS Variables for Theme Support */
+:root {
+  /* Light Theme Variables */
+  --bg-primary: #f8fafc;
+  --bg-secondary: #ffffff;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f1f5f9;
+  --text-primary: #1e293b;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+  --border-color: #e2e8f0;
+  --border-hover: #cbd5e1;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --shadow-hover: rgba(0, 0, 0, 0.15);
+  --overlay-gradient: linear-gradient(to bottom, rgba(255,255,255,0.1), rgba(0,0,0,0.6));
+  --date-badge-bg: rgba(255,255,255,0.9);
+  --date-badge-text: #1e293b;
+  --date-badge-border: rgba(0,0,0,0.1);
+}
+
+/* Dark Theme Variables */
+[data-theme="dark"] {
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #141414;
+  --bg-card: linear-gradient(145deg, #1a1a1a, #141414);
+  --bg-card-hover: linear-gradient(145deg, #1f1f1f, #171717);
+  --text-primary: #ffffff;
+  --text-secondary: #cccccc;
+  --text-muted: #a0a0a0;
+  --border-color: #333333;
+  --border-hover: #555555;
+  --shadow-color: rgba(0, 0, 0, 0.4);
+  --shadow-hover: rgba(0, 0, 0, 0.6);
+  --overlay-gradient: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.6));
+  --date-badge-bg: rgba(0,0,0,0.5);
+  --date-badge-text: rgba(255,255,255,0.9);
+  --date-badge-border: rgba(255,255,255,0.2);
+}
+
+/* Auto dark mode based on system preference */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg-primary: #0a0a0a;
+    --bg-secondary: #141414;
+    --bg-card: linear-gradient(145deg, #1a1a1a, #141414);
+    --bg-card-hover: linear-gradient(145deg, #1f1f1f, #171717);
+    --text-primary: #ffffff;
+    --text-secondary: #cccccc;
+    --text-muted: #a0a0a0;
+    --border-color: #333333;
+    --border-hover: #555555;
+    --shadow-color: rgba(0, 0, 0, 0.4);
+    --shadow-hover: rgba(0, 0, 0, 0.6);
+    --date-badge-bg: rgba(0,0,0,0.5);
+    --date-badge-text: rgba(255,255,255,0.9);
+    --date-badge-border: rgba(255,255,255,0.2);
+  }
+}
+
+/* Page Container */
+.pageContainer {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  min-height: 100vh;
+  transition: all 0.3s ease;
+}
+
+.contentWrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
+}
+
+/* Theme Toggle Button */
+.themeToggle {
+  position: fixed;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 1000;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 12px var(--shadow-color);
+}
+
+.themeToggle:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-hover);
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px var(--shadow-hover);
+}
+
+/* Header */
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.pageTitle {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(135deg, var(--text-primary), var(--text-muted));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.pageSubtitle {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  margin-bottom: 0;
+}
+
+/* Blog Grid - More columns, smaller cards */
+.blogGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+/* Blog Card - Compact Design */
+.blogCard {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 23px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  transform: translateY(15px);
+  box-shadow: 0 2px 8px var(--shadow-color);
+  max-height: 530px; /* Limit card height */
+}
+
+.blogCard.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.blogCard:hover {
+  transform: translateY(-6px) scale(1.02);
+  border-color: var(--border-hover);
+  box-shadow: 0 12px 32px var(--shadow-hover);
+  background: var(--bg-card-hover);
+}
+
+.blogCard:hover .gradientBar {
+  opacity: 1;
+}
+
+/* Gradient Bar */
+.gradientBar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #6366f1, #8b5cf6, #06b6d4);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+}
+
+/* Image Section - Much smaller */
+.imageSection {
+  height: 220px; /* Reduced from 200px */
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.imageOverlay {
+  position: absolute;
+  inset: 0;
+  background: var(--overlay-gradient);
+}
+
+/* Author Avatars - Smaller */
+.authorAvatars {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  display: flex;
+  gap: -6px;
+  z-index: 1;
+}
+
+.avatar {
+  width: auto; /* Reduced from 32px */
+  height: auto;
+  border-radius: 19px;
+   padding: 0.2rem 0.6rem; /* Smaller padding */
+  border: 2px solid var(--date-badge-border);
+ background: var(--date-badge-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem; /* Smaller font */
+  font-weight: 500;
+  color: var(--date-badge-text);
+  margin-left: -6px;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.avatar:first-child {
+  margin-left: 0;
+}
+
+.activeBadge {
+  position: absolute;
+  bottom: 10.75rem;
+  left: 0.75rem;
+  color: var(--date-badge-text);
+  font-size: 0.75rem; /* Smaller font */
+  font-weight: 500;
+  background: var(--date-badge-bg);
+  padding: 0.2rem 0.6rem; /* Smaller padding */
+  border-radius: 12px;
+  backdrop-filter: blur(4px);
+  border: 1px solid var(--date-badge-border);
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+
+/* Date Badge - Smaller */
+.dateBadge {
+  position: absolute;
+  bottom: 0.75rem;
+  left: 0.75rem;
+  color: var(--date-badge-text);
+  font-size: 0.75rem; /* Smaller font */
+  font-weight: 500;
+  background: var(--date-badge-bg);
+  padding: 0.2rem 0.6rem; /* Smaller padding */
+  border-radius: 12px;
+  backdrop-filter: blur(4px);
+  border: 1px solid var(--date-badge-border);
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+
+/* Content Section - Compact */
+.contentSection {
+  padding: 1rem; /* Reduced from 1.5rem */
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0; /* Allow shrinking */
+}
+
+.cardTitle {
+  font-size: 1.1rem; /* Reduced from 1.5rem */
+  font-weight: 700;
+  margin-bottom: 0.5rem; /* Reduced margin */
+  color: var(--text-primary);
+  line-height: 1.3;
+  transition: color 0.3s ease;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.cardDescription {
+  color: var(--text-secondary);
+  margin-bottom: 0.75rem; /* Reduced margin */
+  font-size: 0.85rem; /* Smaller font */
+  line-height: 1.4;
+  transition: color 0.3s ease;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Highlights - Show fewer items */
+.highlights {
+  list-style: none;
+  margin-bottom: 0.75rem; /* Reduced margin */
+  flex: 1;
+  padding: 0;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.highlightItem {
+  color: var(--text-muted);
+  margin-bottom: 0.3rem; /* Reduced margin */
+  padding-left: 0.75rem;
+  position: relative;
+  font-size: 0.8rem; /* Smaller font */
+  line-height: 1.3;
+}
+
+.highlightItem::before {
+  content: '•';
+  color: #6366f1;
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.highlightLink {
+  color: #8b5cf6;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.highlightLink:hover {
+  color: #a78bfa;
+}
+
+/* Light mode highlight adjustments */
+:root .highlightLink {
+  color: #7c3aed;
+}
+
+:root .highlightLink:hover {
+  color: #5b21b6;
+}
+
+/* Tags - Smaller and show fewer */
+.tagsContainer {
+  margin-bottom: 0.75rem; /* Reduced margin */
+}
+
+.tag {
+  display: inline-block;
+  background: rgba(6, 182, 212, 0.1);
+  color: #06b6d4;
+  padding: 0.15rem 0.5rem; /* Smaller padding */
+  border-radius: 12px;
+  font-size: 0.7rem; /* Smaller font */
+  margin: 0.15rem 0.15rem 0 0; /* Smaller margins */
+  border: 1px solid rgba(6, 182, 212, 0.2);
+  transition: all 0.3s ease;
+}
+
+/* Light mode tag adjustments */
+:root .tag {
+  background: rgba(6, 182, 212, 0.15);
+  color: #0891b2;
+  border-color: rgba(6, 182, 212, 0.3);
+}
+
+/* More Tags Indicator */
+.moreTags {
+  color: var(--text-muted);
+  font-size: 0.7rem;
+  display: inline-block;
+  margin-left: 0.25rem;
+}
+
+/* Read More Button - Compact */
+.readMoreBtn {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(99, 102, 241, 0.1);
+  color: #8b5cf6;
+  text-decoration: none;
+  padding: 0.4rem 0.8rem; /* Smaller padding */
+  border-radius: 30px;
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  transition: all 0.3s ease;
+  font-weight: 500;
+  font-size: 0.8rem; /* Smaller font */
+  align-self: flex-start;
+}
+
+.readMoreBtn:hover {
+  background: rgba(99, 102, 241, 0.2);
+  color: #9e82f3;
+  border-color: rgba(99, 102, 241, 0.3);
+  transform: translateX(2px);
+}
+
+/* Light mode button adjustments */
+:root .readMoreBtn {
+  background: rgba(99, 102, 241, 0.15);
+  color: #7c3aed;
+  border-color: rgba(99, 102, 241, 0.3);
+}
+
+:root .readMoreBtn:hover {
+  background: rgba(99, 102, 241, 0.25);
+  color: #5b21b6;
+  border-color: rgba(99, 102, 241, 0.4);
+}
+
+.arrow {
+  margin-left: 0.4rem;
+  transition: transform 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.readMoreBtn:hover .arrow {
+  transform: translateX(2px);
+}
+
+/* Mobile Responsive */
+@media (max-width: 1024px) {
+  .blogGrid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .contentWrapper {
+    padding: 1rem;
+  }
+
+  .pageTitle {
+    font-size: 1.8rem;
+  }
+
+  .blogGrid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+  }
+
+  .contentSection {
+    padding: 0.875rem;
+  }
+
+  .imageSection {
+    height: 100px;
+  }
+
+  .themeToggle {
+    top: 1rem;
+    right: 1rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .pageTitle {
+    font-size: 1.6rem;
+  }
+
+  .cardTitle {
+    font-size: 1rem;
+  }
+
+  .imageSection {
+    height: 150px;
+  }
+
+  .blogGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .blogCard {
+    max-height: 400px;
+  }
+}
+
+/* Enhanced Hover Effects */
+.blogCard:hover .avatar {
+  transform: scale(1.1);
+}
+
+.blogCard:hover .dateBadge {
+  background: var(--date-badge-bg);
+  opacity: 0.95;
+}
+
+.blogCard:hover .cardTitle {
+  color: var(--text-primary);
+}
+
+/* Focus States for Accessibility */
+.readMoreBtn:focus {
+  outline: 2px solid #8b5cf6;
+  outline-offset: 2px;
+}
+
+.highlightLink:focus {
+  outline: 1px solid #8b5cf6;
+  outline-offset: 1px;
+}
+
+.themeToggle:focus {
+  outline: 2px solid #6366f1;
+  outline-offset: 2px;
+}
+
+/* Utility Classes */
+.truncate {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.truncate2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Print Styles */
+@media print {
+  .pageContainer {
+    background: white;
+    color: black;
+  }
+  
+  .blogCard {
+    background: white;
+    border: 1px solid #ccc;
+    break-inside: avoid;
+    max-height: none;
+  }
+  
+  .readMoreBtn,
+  .themeToggle {
+    display: none;
+  }
+}
+
+/* Smooth transitions for theme switching */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Loading Animation */
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.loadingShimmer {
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  animation: shimmer 2s infinite;
+}

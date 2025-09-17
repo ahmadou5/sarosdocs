@@ -79,12 +79,43 @@ const config: Config = {
       },
       items: [
         {
-          type: "docSidebar",
+          type: "dropdown",
           sidebarId: "tutorialSidebar",
           position: "left",
-          label: "Documentation",
+          label: "Build on Saros",
+          items: [
+            {
+              to: "docs/overview",
+              label: "Overview",
+            },
+            {
+              to: "docs/category/getting-started",
+              label: "Getting Started",
+            },
+            {
+              to: "docs/getting-started/installation",
+              label: "Installation",
+            },
+            {
+              to: "docs/category/amm",
+              label: "AMM",
+            },
+            {
+              to: "docs/category/dlmm",
+              label: "DLMM",
+            },
+          ],
         },
-
+        {
+          to: "bounties",
+          position: "left",
+          label: "Saros Bounties",
+        },
+        {
+          to: "hackathon",
+          position: "left",
+          label: "Hackathon",
+        },
         {
           href: "https://github.com/ahmadou5/sarosdocs",
           label: "GitHub",
@@ -104,11 +135,19 @@ const config: Config = {
       style: "dark",
       links: [
         {
-          title: "Docs",
+          title: "Build on Saros",
           items: [
             {
               label: "Documentation",
               to: "/docs/Overview",
+            },
+            {
+              label: "Bounties",
+              to: "/bounties",
+            },
+            {
+              label: "Hackathon",
+              to: "/hackathon",
             },
           ],
         },
@@ -116,22 +155,22 @@ const config: Config = {
           title: "Community",
           items: [
             {
-              label: "Telegram",
-              href: "https://t.me/+DLLPYFzvTzJmNTJh",
-            },
-            {
               label: "X",
               href: "https://x.com/saros_xyz",
+            },
+            {
+              label: "Discord",
+              href: "https://discord.gg/saros_xyz",
+            },
+            {
+              label: "Telegram",
+              href: "https://t.me/+DLLPYFzvTzJmNTJh",
             },
           ],
         },
         {
           title: "More",
           items: [
-            {
-              label: "Blog",
-              to: "/blog",
-            },
             {
               label: "GitHub",
               href: "https://github.com/ahmadou5/sarosdocs",

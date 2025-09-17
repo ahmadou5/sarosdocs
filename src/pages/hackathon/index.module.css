@@ -1,0 +1,135 @@
+/* Hero Section */
+.heroBanner {
+  background-color: var(--ifm-background-color);
+  padding: 6rem 2rem;
+  text-align: center;
+}
+
+.heroContent {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.heroTitle {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin: 0 0 1rem 0;
+  letter-spacing: 0.03em;
+}
+
+.heroSubtitle {
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
+  color: var(--ifm-font-color-base);
+}
+
+.heroButton {
+  background-color: var(--ifm-font-color-base);
+  color: var(--ifm-background-color);
+  border: none;
+  border-radius: 9999px;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.heroButton:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  opacity: 0.9;
+}
+
+/* Main Content */
+.container {
+  padding: 4rem 2rem 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.section {
+  margin-bottom: 3rem;
+}
+
+.section h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.section p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.section ul {
+  margin: 1rem 0 1rem 2rem;
+}
+
+.section li {
+  margin-bottom: 0.5rem;
+}
+
+/* Form Container */
+.formContainer {
+  width: 100%;
+  margin-top: 1.5rem;
+}
+
+.formIframe {
+  display: block;
+  width: 100%;
+  height: 380px;
+  border: none;
+  overflow: hidden;
+  border-radius: 12px;
+  margin: 0;
+}
+
+/* Media queries for responsive design */
+@media screen and (max-width: 996px) {
+  .heroBanner {
+    padding: 3rem 1.5rem;
+  }
+  
+  .heroTitle {
+    font-size: 2.5rem;
+  }
+  
+  .heroSubtitle {
+    font-size: 1.3rem;
+  }
+  
+  .heroButton {
+    padding: 0.75rem 1.5rem;
+  }
+  
+  .container {
+    padding: 3rem 1.5rem 1rem;
+  }
+  
+  .section h2 {
+    font-size: 1.8rem;
+  }
+  
+  .formIframe {
+    height: 420px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .heroTitle {
+    font-size: 2rem;
+  }
+  
+  .heroSubtitle {
+    font-size: 1.1rem;
+  }
+  
+  .heroButton {
+    padding: 0.6rem 1.25rem;
+    font-size: 0.9rem;
+  }
+}
