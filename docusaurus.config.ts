@@ -107,6 +107,11 @@ const config: Config = {
           ],
         },
         {
+          to: "learn",
+          position: "left",
+          label: "Learn Saros",
+        },
+        {
           to: "bounties",
           position: "left",
           label: "Saros Bounties",
@@ -140,6 +145,10 @@ const config: Config = {
             {
               label: "Documentation",
               to: "/docs/Overview",
+            },
+            {
+              label: "Learn",
+              to: "/learn",
             },
             {
               label: "Bounties",

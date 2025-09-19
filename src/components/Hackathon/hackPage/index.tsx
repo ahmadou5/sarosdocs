@@ -22,16 +22,17 @@ export const HackathonPage: React.FC = () => {
       <div className={styles.contentWrapper}>
         <SarosLogo />
         <header className={styles.header}>
+          <h1 className={styles.pageTitle}>BUIDL the BOLD</h1>
           <h1 className={styles.pageTitle}>The First Ever Saros Hackathon</h1>
         </header>
 
         <div className={styles.header}>
-          <h1 className={styles.pageTitle}>Coming Soon!</h1>
+          <h1 className={styles.pageTitle}>Coming Soon!!</h1>
         </div>
         <div
           style={{
             backgroundImage: `url(${
-              require("@site/static/bounties/Banner2.png").default
+              require("@site/static/saros/banner7.png").default
             })`,
           }}
           className={styles.imageSection}

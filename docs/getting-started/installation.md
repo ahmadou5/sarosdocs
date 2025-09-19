@@ -22,7 +22,7 @@ Before you begin, make sure you have the following requirements in place:
 - Operating System: Linux, Mac OS, or Windows.
 - Development Environment: You'll need an Integrated Development Environment (IDE) installed. We recommend Visual Studio Code.
 - Languages: Saros AMM SDK(SarosSwap) and Saros DLMM supports JavaScript. while Saros DLMM/rs Supports Rust, Make sure you have the appropriate language environment set up.
-- Internet Connection: A stable internet connection is required for installation, updates, and interacting with the Lit nodes.
+- Internet Connection: A stable internet connection is required for installation, updates, and interacting with `Saros SDK`.
 
 ## For AMM SDK (Saros Swap).
 
@@ -43,4 +43,4 @@ After Successfully installing `Saros SDK` now we are ready to run our project on
 
 Congratulations you just installed `Saros SDK` in your Project 🥳🥳🎯🎯
 
-![Docusaurus logo](/img/saros.svg)
+![Docusaurus logo](/saros/banner7.png)

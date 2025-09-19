@@ -12,6 +12,4 @@ sidebar_position: 1
 
 We approach this with a long-term mindset. The goal: more resilient liquidity, stronger project lifecycles, and a healthier ecosystem on Solana.
 
-## Saros Dex
-
-![Docusaurus logo](/img/saros.svg)
+![Docusaurus logo](/saros/banner4.png)
